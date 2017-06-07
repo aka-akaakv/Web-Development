@@ -6,6 +6,8 @@
 	<script src="../sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -41,7 +43,7 @@
 		</div>
 
 		<div class="form-group">
-			<label for="conpassword">Password:</label>
+			<label for="conpassword">Confirm Password:</label>
 			<input type="password" class="form-control" name="conpass" id="conpass" placeholder="Confirm Password">
 		</div>
 		
@@ -49,6 +51,15 @@
 	</form>
 
 <script>
+
+	$('input[id="mobile"]').keypress(function(e)
+	{
+   		var x = e.which || e.keycode;
+   		if(!((x==8)  || (x>47 && x<58)))
+   		{
+   			e.preventDefault();
+   		}
+	});
 
 	function ValidateFName()  
 	{  		
@@ -115,7 +126,7 @@
 	{
 		var inputText = $("#mobile").val();
 		if (!!inputText.trim() && /^\d{10}$/.test(inputText))
-		{
+		{			
     		return true;
 		}
 		else 
@@ -184,6 +195,8 @@
 
 </script>
 
+
+	
 
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
